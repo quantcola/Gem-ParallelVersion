@@ -18,7 +18,6 @@ int main ()
     cin >> numberOfThreads;
 
     string workingDirectory=std::experimental::filesystem::current_path();
-    system("rm -r thread*");    //delete all the folders in the last simulation
     system("rm Result_*");     //delete all the log files in the last run
     vector<thread> threads;
 
@@ -47,6 +46,8 @@ int main ()
         thread.join();
     }
 
+    system("rm -r thread*");    //delete all the folders in this simulation
+    
     cout << "***************************************************************************************************************" << endl;
     cout << "All the paralleled process has finishes! Below is the final result: " << endl;
     double gain=0;
