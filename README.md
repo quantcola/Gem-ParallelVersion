@@ -7,4 +7,4 @@ $ make
 
 $ ./run
 
-Then enter the number of threads you want to use, and you can get the gain of the gas electron multiplier.
+Then enter the number of threads you want to use, and you can get the gain of the gas electron multiplier.12123123
