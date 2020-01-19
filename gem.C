@@ -21,7 +21,7 @@
 #include <TGeoMatrix.h>
 #include <TGeoCompositeShape.h>
 
-#include "Garfield/ComponentAnsys123.hh"
+#include "Garfield/ComponentComsol.hh"
 #include "Garfield/ViewField.hh"
 #include "Garfield/MediumMagboltz.hh"
 #include "Garfield/Sensor.hh"
@@ -45,8 +45,8 @@ int main()
     const bool debug = true;
 
     /************** Load the field map.************/
-    ComponentAnsys123* fm = new ComponentAnsys123();
-    fm->Initialise("ELIST.lis", "NLIST.lis", "MPLIST.lis", "PRNSOL.lis", "mm");
+    ComponentComsol* fm = new ComponentComsol();
+    fm->Initialise("mesh.mphtxt","dielectrics.dat","field.txt");
     fm->EnableMirrorPeriodicityX();
     fm->EnableMirrorPeriodicityY();
     fm->PrintRange();
@@ -123,12 +123,12 @@ int main()
     ofstream position_electron;
     ofstream gain_log;
     ofstream gain_effective_log;
-    summaray_electron.open ("summaray_electron.txt",ios::app);
-    time_electron.open ("time_electron.txt",ios::app);
-    position_ion.open ("position_ion.txt",ios::app);
-    position_electron.open ("position_electron.txt",ios::app);
-    gain_log.open("gain.txt",ios::app);
-    gain_effective_log.open("gain_effective.txt",ios::app);
+    summaray_electron.open ("Result_summaray_electron",ios::app);
+    time_electron.open ("Result_time_electron",ios::app);
+    position_ion.open ("Result_position_ion",ios::app);
+    position_electron.open ("Result_position_electron",ios::app);
+    gain_log.open("Result_gain",ios::app);
+    gain_effective_log.open("Result_gain_effective",ios::app);
 
     int gain = 0;
     int gain_effective=0;

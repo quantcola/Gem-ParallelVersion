@@ -19,7 +19,7 @@ int main ()
 
     string workingDirectory=std::experimental::filesystem::current_path();
     system("rm -r thread*");    //delete all the folders in the last simulation
-    system("rm *.txt");     //delete all the log files in the last run
+    system("rm Result_*");     //delete all the log files in the last run
     vector<thread> threads;
 
     for(int i=0;i<numberOfThreads;i++)
@@ -32,7 +32,7 @@ int main ()
         system(mkdirCommand.c_str());
 
         //copy field maps to each folders
-        string cpCommand="cp gem ELIST.lis MPLIST.lis NLIST.lis PRNSOL.lis thread";
+        string cpCommand="cp mesh.mphtxt dielectrics.dat field.txt gem thread";
         cpCommand.append(to_string(i));
         system(cpCommand.c_str());
 
@@ -53,8 +53,8 @@ int main ()
     double gain_effective=0;
     ifstream readFile1;
     ifstream readFile2;
-    readFile1.open("gain.txt");
-    readFile2.open("gain_effective.txt");
+    readFile1.open("Result_gain");
+    readFile2.open("Result_gain_effective");
 
     for(int i=0;i<numberOfThreads;i++)
     {
