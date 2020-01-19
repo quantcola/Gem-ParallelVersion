@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "gem.C": "cpp",
+        "control.C": "cpp",
+        "iostream": "cpp",
+        "filesystem": "cpp",
+        "fstream": "cpp",
+        "summation.C": "cpp"
+    }
+}
