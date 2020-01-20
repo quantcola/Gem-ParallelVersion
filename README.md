@@ -1,6 +1,8 @@
 # Gem-ParallelVersion
 This is a project which can analyse gas electron multiplier parallelly.
 
+************** One very important thing to notice: Your path could not contain folder which includes spaces *********************
+
 In the command line, enter:
 
 $ make

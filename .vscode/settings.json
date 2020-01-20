@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "gem.C": "cpp",
+        "control.C": "cpp",
+        "iostream": "cpp",
+        "ostream": "cpp"
+    }
+}
