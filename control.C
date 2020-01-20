@@ -29,12 +29,10 @@ int main ()
         prefix.append(to_string(i));
         mkdirCommand.append(prefix);
         system(mkdirCommand.c_str());
-        cout << "Command is: " << mkdirCommand<< endl;
 
         //copy field maps to each folders
         string cpCommand="cp mesh.mphtxt dielectrics.dat field.txt gem thread";
         cpCommand.append(to_string(i));
-        cout << "Command is: " << cpCommand<< endl;
         system(cpCommand.c_str());
 
         //run ./gem in parallel
